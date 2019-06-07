@@ -6,7 +6,7 @@
 
 % --- Class structure: identification part
 \ProvidesClass{elegantpaper}[2019/04/01 v0.07 ElegantLaTeX Paper class]
-\NeedsTeXFormat{LaTeX2e} 
+\NeedsTeXFormat{LaTeX2e}
 
 
 \RequirePackage{kvoptions}
@@ -47,8 +47,8 @@
 
 \graphicspath{{image/}{figure/}{fig/}{img/}}
 
-% caption settings 
-\RequirePackage[font=small,labelfont={bf}]{caption} 
+% caption settings
+\RequirePackage[font=small,labelfont={bf}]{caption}
 \captionsetup[table]{skip=3pt}
 \captionsetup[figure]{skip=3pt}
 
@@ -56,7 +56,7 @@
 \RequirePackage[shortlabels,inline]{enumitem}
 \setlist{nolistsep}
 
-% define the hyperref color 
+% define the hyperref color
 \RequirePackage{xcolor}
 \definecolor{winered}{rgb}{0.5,0,0}
 
@@ -82,7 +82,7 @@
 
 % \setlength{\voffset}{-0.75in}
 \setlength{\headsep}{5pt}
-% add the \email cmd 
+% add the \email cmd
 \newcommand\email[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 
 \PassOptionsToPackage{no-math}{fontspec}
@@ -111,18 +111,18 @@
 	\newtheorem{case}{\normalfont\bfseries 案例} %
 	\renewcommand*{\proofname}{\normalfont\bfseries 证明} %
 	\renewcommand\contentsname{目录}
-	\renewcommand\refname{参考文献} %
+	\renewcommand\refname{\centering{参考文献}} %
 	\renewcommand\figurename{图} %
 	\renewcommand\tablename{表}%
 	\newcommand\versiontext{版本：}%
-	\newcommand\updatetext{更新：}%
-	\renewcommand\abstractname{摘\hspace{2em}要}
+	\newcommand\updatetext{}%
+	\renewcommand\abstractname{\Large{摘\hspace{2em}要}}
 	\setlength{\parindent}{2em}
 	\renewcommand{\abstracttextfont}{\small\sffamily\kaishu\noindent\ignorespaces}
 	\newcommand{\keywords}[1]{\vskip2ex\par\noindent\normalfont{\bfseries 关键词: } #1}
 	\newcommand\figref[1]{{\bfseries 图~\ref{#1}}}
 	\newcommand\tabref[1]{{\bfseries 表~\ref{#1}}}
-  \RequirePackage[authoryear]{gbt7714}
+  \RequirePackage{gbt7714}
 }{\relax}
 \ifdefstring{\ELEGANT@lang}{en}{
   \theoremstyle{plain}% default
@@ -196,11 +196,11 @@
 \def\@maketitle{%
   \newpage
   \null
-  \vskip 2em%
+  \vskip 10em%
   \begin{center}%
   \let \footnote \thanks
-    {\LARGE\bfseries \@title \par}%
-    \vskip 1.5em%
+    {\huge\bfseries \@title \par}%
+    \vskip 35em%
     {\large
       \lineskip .5em%
       \begin{tabular}[t]{c}%
@@ -209,7 +209,7 @@
       \end{tabular}\par}%
 \vskip 1.5em%
 \IfEmpty\version
-\else 
+\else
 {\small\normalfont\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}\versiontext\the\version}
 \fi
 \ifx\@date\empty
@@ -220,7 +220,7 @@
   \end{center}%
   \par
 }
-  
+
 
 
 
@@ -248,7 +248,7 @@
 
 
 
-\RequirePackage{listings} 
+\RequirePackage{listings}
 \renewcommand{\ttdefault}{cmtt}
 \lstdefinestyle{mystyle}{
   basicstyle=%

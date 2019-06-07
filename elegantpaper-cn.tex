@@ -3,23 +3,20 @@
 % 完整编译方法 2: xelatex -> bibtex -> xelatex -> xelatex
 \documentclass[lang=cn,11pt]{elegantpaper}
 
-\title{ElegantPaper: 一个优美的 \LaTeX{} 工作论文模板}
-\author{\href{https://ddswhu.me/}{邓东升}}
-
-\institute{\href{https://elegantlatex.org/}{Elegant\LaTeX{} 项目组}}
-
-% 不需要版本信息，直接注释即可
-\version{0.07}
-% 不需要时间信息的话，需要把 \today 删除。
+\title{网络故障诊断与修复综述}
+\author{左岳尚}
+\institute{计算机53 2150500087}
 \date{\today}
 
 
 \begin{document}
 
 \maketitle
+\newpage
 
 \begin{abstract}
 本文为 \href{https://github.com/ElegantLaTeX/ElegantPaper/}{ElegantPaper} 的说明文档（中文）。此模板基于 \LaTeX{} 的 article 类，专为工作论文写作而设计。设计这个模板的初衷是让作者不用关心工作论文的格式，专心写作，从而有更加舒适，简便的写作体验。如果你有其他问题、建议或者报告 bug，可以在 \href{https://github.com/ElegantLaTeX/ElegantPaper/issues}{ElegantPaper/issues} 留言。如果你想了解更多由 Elegant\LaTeX{} 项目组设计的模板，请访问 \href{https://github.com/ElegantLaTeX/}{https://github.com/ElegantLaTeX/}。
+
 \keywords{Elegant\LaTeX{}，工作论文，模板}
 \end{abstract}
 
@@ -32,12 +29,12 @@
 \begin{equation}
 (a+3b)^{n} = \sum_{k=0}^{n} C_{n}^{k} a^{n-k} (3b)^k\label{eq:binom}
 \end{equation}
-      
+
 \subsection{全局选项}
 我在这个模板中定义了一个语言选项 \lstinline{lang}，可以选择英文模式 \lstinline{lang=en}（默认）或者中文模式 \lstinline{lang=cn}。当选择中文模式时，图表的标题引导词以及参考文献，定理引导词等信息会变成中文。你可以通过下面两种方式来选择语言模式：
 \begin{lstlisting}
 \documentclass[lang=cn]{elegantpaper} % or
-\documentclass{cn}{elegantpaper} 
+\documentclass{cn}{elegantpaper}
 \end{lstlisting}
 
 
@@ -56,7 +53,7 @@
 \begin{lstlisting}
 \begin{itemize}
    \item Routing and resource discovery;
-   \item Resilient and scalable networks; 
+   \item Resilient and scalable networks;
    \item Distributed storage and search.
 \end{itemize}
 \end{lstlisting}
@@ -135,7 +132,7 @@
 
 
 \subsection{参考文献}
-此模板使用了 Bib\TeX{} 来生成参考文献，默认使用的文献样式（bib style）是 \lstinline{GB/T 7714-2015}\footnote{通过调用 \href{https://ctan.org/pkg/gbt7714}{\lstinline{gbt7714}} 宏包}。参考文献示例：~\cite{en3} 使用了中国一个大型的 P2P 平台（人人贷）的数据来检验男性投资者和女性投资者在投资表现上是否有显著差异。
+此模板使用了 Bib\TeX{} 来生成参考文献，默认使用的文献样式（bib style）是 \lstinline{GB/T 7714-2015}\footnote{通过调用 \href{https://ctan.org/pkg/gbt7714}{\lstinline{gbt7714}} 宏包}。参考文献示例：测试\cite{en3} 使用了中国一个大型的 P2P 平台（人人贷）的数据来检验男性投资者和女性投资者在投资表现上是否有显著差异。
 
 你可以在谷歌学术，Mendeley，Endnote 中获得文献条目（bib item），然后把它们添加到 \lstinline{wpref.bib} 中。在文中引用的时候，引用它们的键值（bib key）即可。注意需要在编译的过程中添加 Bib\TeX{} 编译。如果你想在参考文献中添加未引用的文献（部分或者全部），可以使用
 \begin{lstlisting}
@@ -150,7 +147,7 @@
 
 % title information
 \title{A Working Paper Example}
-\author{ddswhu} 
+\author{ddswhu}
 \institute{Elegant\LaTeX{} Group}
 \version{1.00}
 \date{\today}
@@ -176,8 +173,10 @@ The content of conclusion section.
 \end{document}
 \end{lstlisting}
 
+% 参考文献
+\newpage
+% 未被引用的文献也出现
 \nocite{*}
-
 \bibliography{wpref}
 
 \end{document}
